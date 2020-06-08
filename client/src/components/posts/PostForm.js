@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPost } from '../../actions/post';
-const PostForm = ({ postId, addPost }) => {
+const PostForm = ({ addPost }) => {
   const [text, setText] = useState('');
   return (
     <div className='post-form'>
@@ -13,7 +13,7 @@ const PostForm = ({ postId, addPost }) => {
         className='form my-1'
         onSubmit={(e) => {
           e.preventDefault();
-          addPost(postId, { text });
+          addPost({ text });
           setText('');
         }}
       >
